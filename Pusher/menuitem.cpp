@@ -25,12 +25,12 @@ void startgame() {
 				}
 				if (lvl>lastlvl) {
 					system("cls");
-					printf("\n КОНЕЦ!\n (нажмите любую клавишу, чтобы вернуться в главное меню)");
+					printf("\n РљРћРќР•Р¦!\n (РЅР°Р¶РјРёС‚Рµ Р»СЋР±СѓСЋ РєР»Р°РІРёС€Сѓ, С‡С‚РѕР±С‹ РІРµСЂРЅСѓС‚СЊСЃСЏ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ)");
 					getch();
 					break;
 				}
 				system("cls");
-				printf("\n Уровень №%d", lvl);
+				printf("\n РЈСЂРѕРІРµРЅСЊ в„–%d", lvl);
 				itoa(lvl, namelvl, 10);
 				createwaylvl(namelvl);
 				Sleep(3000);
@@ -46,7 +46,7 @@ void choicelvl() {
 		system("cls");
 		char namelvl[10]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		back=0;
-		printf("\n Введите название или номер уровня (1-5, 0 - выход): ");
+		printf("\n Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РёР»Рё РЅРѕРјРµСЂ СѓСЂРѕРІРЅСЏ (1-5, 0 - РІС‹С…РѕРґ): ");
 		gets(namelvl);
 		if (namelvl[0]==48) {
 			back=1;
@@ -56,7 +56,7 @@ void choicelvl() {
 		if (!access(filelvl,0))
 			break;
 		else
-			printf(" Такого уровня не существует.\n");
+			printf(" РўР°РєРѕРіРѕ СѓСЂРѕРІРЅСЏ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚.\n");
 		Sleep(3000);
 	}
 	if (back!=1)
@@ -66,23 +66,23 @@ void choicelvl() {
 void zastavka() {
 	Sleep(1000);
 	SetConsoleTextAttribute(hConsole, White << 4 | LightGray);
-	printf("\n\n  ТОЛКАТЕЛЬ");
+	printf("\n\n  РўРћР›РљРђРўР•Р›Р¬");
 	Sleep(20);
 	system("cls");
 	SetConsoleTextAttribute(hConsole, White << 4 | DarkGray);
-	printf("\n\n  ТОЛКАТЕЛЬ");
+	printf("\n\n  РўРћР›РљРђРўР•Р›Р¬");
 	Sleep(20);
 	system("cls");
 	SetConsoleTextAttribute(hConsole, White << 4 | Black);
-	printf("\n\n  ТОЛКАТЕЛЬ");
+	printf("\n\n  РўРћР›РљРђРўР•Р›Р¬");
 	Sleep(2000);
 	system("cls");
 	SetConsoleTextAttribute(hConsole, White << 4 | DarkGray);
-	printf("\n\n  ТОЛКАТЕЛЬ");
+	printf("\n\n  РўРћР›РљРђРўР•Р›Р¬");
 	Sleep(20);
 	system("cls");
 	SetConsoleTextAttribute(hConsole, White << 4 | LightGray);
-	printf("\n\n  ТОЛКАТЕЛЬ");
+	printf("\n\n  РўРћР›РљРђРўР•Р›Р¬");
 	Sleep(20);
 	system("cls");
 	SetConsoleTextAttribute(hConsole, White << 4 | Black);
@@ -91,29 +91,29 @@ void zastavka() {
 
 void spravka() {
 	system("cls");
-	printf("\n Игра: Толкатель.\n");
-	printf("\n Цель в игре: найти выход.\n");
-	printf("\n Правили:\n");
-	printf(" 1) Персонаж может сдвинуть коробку перед собой, но только одну;\n");
-	printf(" 2) Персонаж не может проходить сквозь стены;\n");
-	printf(" 3) Чтобы пройти уровень, вам необходимо добраться до двери выхода.\n");
-	printf("\n Обозначения:\n\n");
-	printf(" %c - персонаж;\n\n", 2);
+	printf("\n РРіСЂР°: РўРѕР»РєР°С‚РµР»СЊ.\n");
+	printf("\n Р¦РµР»СЊ РІ РёРіСЂРµ: РЅР°Р№С‚Рё РІС‹С…РѕРґ.\n");
+	printf("\n РџСЂР°РІРёР»Р°:\n");
+	printf(" 1) РџРµСЂСЃРѕРЅР°Р¶ РјРѕР¶РµС‚ СЃРґРІРёРЅСѓС‚СЊ РєРѕСЂРѕР±РєСѓ РїРµСЂРµРґ СЃРѕР±РѕР№, РЅРѕ С‚РѕР»СЊРєРѕ РѕРґРЅСѓ;\n");
+	printf(" 2) РџРµСЂСЃРѕРЅР°Р¶ РЅРµ РјРѕР¶РµС‚ РїСЂРѕС…РѕРґРёС‚СЊ СЃРєРІРѕР·СЊ СЃС‚РµРЅС‹;\n");
+	printf(" 3) Р§С‚РѕР±С‹ РїСЂРѕР№С‚Рё СѓСЂРѕРІРµРЅСЊ, РІР°Рј РЅРµРѕР±С…РѕРґРёРјРѕ РґРѕР±СЂР°С‚СЊСЃСЏ РґРѕ РґРІРµСЂРё РІС‹С…РѕРґР°.\n);
+	printf("\n РћР±РѕР·РЅР°С‡РµРЅРёСЏ:\n\n");
+	printf(" %c - РїРµСЂСЃРѕРЅР°Р¶;\n\n", 2);
 	SetConsoleTextAttribute(hConsole, White << 4 | Brown);
 	printf(" %c", 219);
 	SetConsoleTextAttribute(hConsole, White << 4 | Black);
-	printf(" - коробка;\n\n ");
+	printf(" - РєРѕСЂРѕР±РєР°;\n\n ");
 	SetConsoleTextAttribute(hConsole, DarkGray << 4 | Red);
 	printf("%c", 4);
 	SetConsoleTextAttribute(hConsole, White << 4 | Black);
-	printf(" - выход.\n");
-	printf("\n Управлени:\n\n WASD - клавиши управления персонажем;\n Esc - пауза;\n 1, 2, 3... - клавиши управления меню/паузы.\n");
-	printf("\n Нажмите любую клавишу для возврата в меню.");
+	printf(" - РІС‹С…РѕРґ.\n");
+	printf("\n РЈРїСЂР°РІР»РµРЅРё:\n\n WASD - РєР»Р°РІРёС€Рё СѓРїСЂР°РІР»РµРЅРёСЏ РїРµСЂСЃРѕРЅР°Р¶РµРј;\n Esc - РїР°СѓР·Р°;\n 1, 2, 3... - РєР»Р°РІРёС€Рё СѓРїСЂР°РІР»РµРЅРёСЏ РјРµРЅСЋ/РїР°СѓР·С‹.\n");
+	printf("\n РќР°Р¶РјРёС‚Рµ Р»СЋР±СѓСЋ РєР»Р°РІРёС€Сѓ РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ.");
 	getch();
 }
 
 void author() {
 	system("cls");
-	printf("\n Данная программа является курсовым проектом\n\n Автор:\n студент группы 15ВВ2\n Жданов Д.М.\n\n 2016");
+	printf("\n Р”Р°РЅРЅР°СЏ РїСЂРѕРіСЂР°РјРјР° СЏРІР»СЏРµС‚СЃСЏ РєСѓСЂСЃРѕРІС‹Рј РїСЂРѕРµРєС‚РѕРј\n\n РђРІС‚РѕСЂ:\n СЃС‚СѓРґРµРЅС‚ РіСЂСѓРїРїС‹ 15Р’Р’2\n Р–РґР°РЅРѕРІ Р”.Рњ.\n\n 2016");
 	getch();
 }
