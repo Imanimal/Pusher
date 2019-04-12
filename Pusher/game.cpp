@@ -23,23 +23,23 @@ void printlvl() {
 	for (int i=0; i < strok; i++) {
 		for (int j=0; j < stolb; j++) {
 			switch(level[i][j]){
-				case 1://ñòåíà
+				case 1:// ÑÑ‚ÐµÐ½Ð°
 					SetConsoleTextAttribute(hConsole, Black << 4 | Black);
 					printf("%c", 219);
 					break;
-				case 0:
+				case 0:// ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾Ðµ Ð¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÑ‚Ð²Ð¾
 					SetConsoleTextAttribute(hConsole, White << 4 | White);
 					printf(" ");
 					break;
-				case 4://êîðîáêà
+				case 4:// ÐºÐ¾Ñ€Ð¾Ð±ÐºÐ°
 					SetConsoleTextAttribute(hConsole, White << 4 | Brown);
 					printf("%c", 219);
 					break;
-				case 5://ïåðñîíàæ
+				case 5:// Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶
 					SetConsoleTextAttribute(hConsole, White << 4 | Black);
 					printf("%c", 2);
 					break;
-				case 2://âûõîä
+				case 2:// Ð²Ñ‹Ñ…Ð¾Ð´
 					SetConsoleTextAttribute(hConsole, DarkGray << 4 | Red);
 					printf("%c", 4);
 					break;
@@ -54,7 +54,7 @@ void printlvl() {
 }
 
 bool pause(char filelvl[20]) {
-	printf("\n Ïàóçà\n 1. Ïðîäîëæèòü\n 2. Íà÷àòü çàíîâî\n 3. Âûõîä");
+	printf("\n ÐŸÐ°ÑƒÐ·Ð°\n 1. ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ\n 2. ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ð·Ð°Ð½Ð¾Ð²Ð¾\n 3. Ð’Ñ‹Ñ…Ð¾Ð´");
 	while(1) {
 		button=getch();
 		switch(button){
@@ -103,7 +103,7 @@ bool control(char filelvl[20]) {
 		printlvl();
 		button=getch();
 		switch(button){
-		case 119://ââåðõ
+		case 119:// Ð²Ð²ÐµÑ€Ñ…
 			if(level[x-1][y]==1 || (level[x-1][y]==4 && (level[x-2][y]==1 || level[x-2][y]==2 || level[x-2][y]==4)))
 				break;
 			if(level[x-1][y]==4)
@@ -116,7 +116,7 @@ bool control(char filelvl[20]) {
 			x=position(x, 1);
 			level[x][y]=5;
 			break;
-		case 97://âëåâî
+		case 97:// Ð²Ð»ÐµÐ²Ð¾
 			if(level[x][y-1]==1 || (level[x][y-1]==4 && (level[x][y-2]==1 || level[x][y-2]==2 || level[x][y-2]==4)))
 				break;
 			if(level[x][y-1]==4)
@@ -129,7 +129,7 @@ bool control(char filelvl[20]) {
 			y=position(y, 1);
 			level[x][y]=5;
 			break;
-		case 115://âíèç
+		case 115:// Ð²Ð½Ð¸Ð·
 			if(level[x+1][y]==1 || (level[x+1][y]==4 && (level[x+2][y]==1 || level[x+2][y]==2 || level[x+2][y]==4)))
 				break;
 			if(level[x+1][y]==4)
@@ -142,7 +142,7 @@ bool control(char filelvl[20]) {
 			x=position(x, 0);
 			level[x][y]=5;
 			break;
-		case 100://âïðàâî
+		case 100:// Ð²Ð¿Ñ€Ð°Ð²Ð¾
 			if(level[x][y+1]==1 || (level[x][y+1]==4 && (level[x][y+2]==1 || level[x][y+2]==2 || level[x][y+2]==4)))
 				break;
 			if(level[x][y+1]==4)
