@@ -1,0 +1,14 @@
+Установка шрифта для консоли по умолчанию.
+
+HANDLE hCon = CreateConsoleScreenBuffer( GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL );
+    if (hCon != INVALID_HANDLE_VALUE) {
+        CONSOLE_FONT_INFOEX cfi;
+        cfi.cbSize          = sizeof(CONSOLE_FONT_INFOEX);
+        cfi.nFont           = 0;
+        cfi.dwFontSize.X    = 12;
+        cfi.dwFontSize.Y    = 12;
+        cfi.FontFamily      = FF_DONTCARE;
+        cfi.FontWeight      = 400;
+        wcscpy(cfi.FaceName, L"Точечные шрифты");
+        SetCurrentConsoleFontEx(hCon, FALSE, &cfi);
+    }
